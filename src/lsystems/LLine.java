@@ -18,6 +18,10 @@ public class LLine {
 	public void process() throws LSystemSymbolException, LSystemLengthException {
 		
 		ArrayList<Character> tempList = new ArrayList<Character>();
+		
+		if(line.length==0) {
+			throw new LSystemLengthException();
+		}
 	
 		for(int i=0; i<line.length; i++) {
 		
@@ -30,7 +34,7 @@ public class LLine {
 					
 					for(char tempChar: tempLRule.getBody()) {
 						
-						if(tempChar == 'Q') throw new LSystemSymbolException(tempChar);
+						if(tempChar == 'Q') throw new LSystemSymbolException();
 						
 						tempList.add(tempChar);
 					}
