@@ -21,6 +21,7 @@ public class LLine {
 	
 		for(int i=0; i<line.length; i++) {
 		
+		
 			
 			for(LRule tempLRule: rules) {
 				
@@ -28,6 +29,9 @@ public class LLine {
 				if(line[i] == tempLRule.getMatch()) {
 					
 					for(char tempChar: tempLRule.getBody()) {
+						
+						if(tempChar == 'Q') throw new LSystemSymbolException(tempChar);
+						
 						tempList.add(tempChar);
 					}
 					break;
