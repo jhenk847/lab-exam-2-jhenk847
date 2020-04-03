@@ -11,12 +11,6 @@ public class LSystemSymbolException extends Exception{
 		this.symbol=symbol;
 	}
 	
-	//have to find a way to make only the one char go 
-	public void setSymbol(char symbol) {
-		this.symbol=symbol;
-	}
-	
-	
 	public char getSymbol() {
 		return symbol;
 	}
