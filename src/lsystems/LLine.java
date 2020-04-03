@@ -1,5 +1,6 @@
 package lsystems;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +17,24 @@ public class LLine {
 	
 	public void process() throws LSystemSymbolException, LSystemLengthException {
 		
+		ArrayList<Character> tempList = new ArrayList<Character>();
+	
+		for(int i=0; i<line.length; i++) {
+		
+			
+			for(LRule tempLRule: rules) {
+				
+				
+				if(line[i] == tempLRule.getMatch()) {
+					
+					for(char tempChar: tempLRule.getBody()) {
+						tempList.add(tempChar);
+					}
+					break;
+				}
+			}
+		}
+		line = listToArray(tempList);
 	}
 	
 	
